@@ -1,10 +1,7 @@
-html {
-  zoom: 100%; 
-}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body {
   font-family: "Syne", sans-serif;
@@ -218,7 +215,7 @@ header ul li a {
 
 .feedback {
   padding: 48px;
-  border-bottom: 2px solid #00000029;
+  border-bottom: 2px solid #381664;
   position: relative;
 }
 
@@ -237,80 +234,72 @@ header ul li a {
   margin-bottom: 2rem;
 }
 
-.card-container {
+.card-container{
+  color: #381664;
   display: flex;
-  align-items: start;
   gap: 24px;
+  display: flex;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 24px;
   scroll-snap-type: x mandatory;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  align-items: start;
+  padding: 10px 0 30px 0;
 }
 
-.card-container::-webkit-scrollbar {
-  display: none;
-}
-
-.card {
+.card{
+  background: white;
   border: 1px solid #440A8F;
-  background-color: #FFFFFF;
   padding: 24px;
+  width: 288px;
   border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  transition: all 0.3s ease;
 }
 
-.profile {
+.profile{
   display: flex;
-  gap: 20px;
-  align-items: center;
+  gap: 12px;
   margin-bottom: 16px;
+  overflow: auto;
 }
 
-.profile h6 {
-  font-family: "Familjen Grotesk", sans-serif;
-  text-align: left;
+.profile img{
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 1px solid #440A8F;
+}
+
+.profile h6{
+  font-family: "Familjen Grotesk";
   font-size: 15px;
   font-weight: 600;
   line-height: 20px;
-  color: #381664;
-  font-weight: bold;
 }
 
-.profile p {
-  font-family: "Familjen Grotesk", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
-  margin: 0;
-  color: #381664;
+.profile p{
+  font-family: "Familjen Grotesk";
+font-size: 15px;
+font-weight: 400;
+line-height: 20px;
 }
 
-.profile img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  gap: 12px;
-  object-fit: cover;
-  border: 1px solid #381664;
+.card .caption{
+font-family: Familjen Grotesk;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+padding-left: 36px;
+margin-left: 24px;
+border-left: 1px solid #440A8F;
+width: 180px;
+color: #381664;
 }
 
-.card .caption {
-  font-family: "Familjen Grotesk", sans-serif;
-  width: 180px;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  padding-left: 36px;
-  color: #381664;
-  border-left: 1px solid #381664;
-  margin: 0;
-  margin-left: 24px;
-}
+
 
 /* Add media queries for responsiveness */
 @media (max-width: 1200px) {
@@ -497,5 +486,164 @@ footer button:hover {
   }
   100% {
       opacity: 1;
+  }
+}
+
+
+/* Add these media queries to your index.css file */
+
+/* Large tablets and small laptops */
+@media screen and (max-width: 1024px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+  
+  header ul li a {
+    font-size: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 6rem;
+    line-height: 80px;
+  }
+  
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .about p {
+    width: 80%;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 2rem;
+    margin: 10px 15px;
+  }
+  
+  header ul li a {
+    font-size: 1.2rem;
+    margin: 0 8px;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    line-height: 60px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 10px;
+  }
+  
+  .project img {
+    width: 100%;
+    margin: 1rem;
+  }
+  
+  .skills-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .card-container {
+    padding: 24px 12px;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: 2.3rem;
+    margin: 5px 10px;
+  }
+  
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 4.5rem;
+    line-height: 80px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .project img {
+    margin: 0;
+  }
+  
+  .about p {
+    width: 90%;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+  
+  .what-i-do {
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .what-i-do h2{
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .what-i-do .skills-container {
+    padding: 10px;
+    flex-direction: column;
+    margin: 0 auto;  /* Changed from margin-left */
+    justify-content: center;
+    align-items: center;
+    width: 100%;  /* Added to ensure full width */
+  }
+  
+  .what-i-do .skills-column,
+  .what-i-do .skills-column2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  /* Added to ensure full width */
+    margin: 0;    /* Reset any margins */
+    padding: 0;   /* Reset any padding */
+  }
+
+  .what-i-do .skill {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 1.8rem;
+  }
+  
+  footer button {
+    font-size: 1.2rem;
+    padding: 12px 24px;
   }
 }
